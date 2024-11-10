@@ -1,0 +1,4 @@
+# Oh My Zsh!
+getantidote/use-omz
+
+ohmyzsh/ohmyzsh path:lib

@@ -1,0 +1,29 @@
+###############################################################################
+# Antidote
+###############################################################################
+if [[ ! -d ${ZDOTDIR:-$HOME}/.antidote ]]; then
+  git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+fi
+
+source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
+antidote load
+
+
+###############################################################################
+# Oh My Posh
+###############################################################################
+if ! command -v oh-my-posh &> /dev/null; then
+  curl -s https://ohmyposh.dev/install.sh | bash -s
+  oh-my-posh font install JetBrainsMono
+fi
+
+eval "$(oh-my-posh init zsh --config "${ZDOTDIR:-$HOME}/theme.omp.toml")"
+
+
+###############################################################################
+# Configuration
+###############################################################################
+# Load configuration
+for config_file ("$ZDOTDIR/config"/*.zsh(N)); do
+  source "$config_file"
+done
