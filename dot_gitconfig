@@ -1,0 +1,45 @@
+[alias]
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	out = log --pretty=oneline --abbrev-commit --graph @{u}.. --stat
+	in = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+[commit]
+	gpgSign = true
+[diff]
+	tool = bcompare
+[difftool]
+	prompt = false
+[difftool "bcompare"]
+	trustExitCode = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/opt/1Password/op-ssh-sign"
+[init]
+	defaultBranch = main
+[merge]
+	tool = bcompare
+[mergetool]
+	prompt = false
+	keepBackup = false
+[mergetool "bcompare"]
+	trustExitCode = true
+[pager]
+	branch = false
+	tag = false
+[pull]
+	ff = only
+[push]
+	autoSetupRemote = true
+[tag]
+	gpgSign = true
+[user]
+	email = adam.j.butler@protonmail.com
+	name = Adam Butler
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJlzNOgMLqHfOEctIUxbhntpcLj6hAYIoSM4A1IeBTGG
