@@ -1,0 +1,14 @@
+Host *
+    IdentityAgent ~/.1password/agent.sock
+
+{{- $config := fromJson (onepasswordRead "op://Beagle Designs/SSH Hosts/hosts") -}}
+{{- range $config.hosts }}
+Host {{ .hostname }}
+    {{- if hasKey . "ssh_hostname" }}
+    HostName {{ .ssh_hostname }}
+    {{- end }}
+    User {{ .username }}
+    IdentityFile ~/.ssh/{{ .keyfile }}.pub
+    IdentitiesOnly yes
+    Port {{ .port }}
+{{- end }}
