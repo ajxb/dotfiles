@@ -61,19 +61,6 @@ final_space = true
       always_enabled = true
 
   [[blocks.segments]]
-    type = 'executiontime'
-    style = 'diamond'
-    leading_diamond = ''
-    foreground = 'p:black'
-    background = 'p:blue'
-    template = ' <b> {{ .FormattedMs }}</b> '
-
-    [blocks.segments.properties]
-      always_enabled = false
-      threshold = 1000
-      style = 'galveston'
-
-  [[blocks.segments]]
     type = 'git'
     style = 'diamond'
     leading_diamond = ''
@@ -87,6 +74,33 @@ final_space = true
       branch_max_length = 25
       fetch_status = true
       fetch_upstream_icon = true
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'diamond'
+    leading_diamond = ''
+    foreground = 'p:black'
+    background = 'p:yellow'
+    template = ' {{ .Venv }}/{{ .Full }}  '
+
+    [blocks.segments.properties]
+      fetch_virtual_env = true
+      fetch_version = true
+      display_mode = 'environment'
+      
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'diamond'
+    leading_diamond = ''
+    foreground = 'p:black'
+    background = 'p:blue'
+    template = ' <b> {{ .FormattedMs }}</b> '
+
+    [blocks.segments.properties]
+      always_enabled = false
+      threshold = 1000
+      style = 'galveston'
 
   [[blocks.segments]]
     type = 'upgrade'
@@ -120,15 +134,3 @@ final_space = true
 
   #   [blocks.segments.properties]
   #     fetch_version = false
-
-  # [[blocks.segments]]
-  #   style = 'plain'
-  #   template = ' '
-  #   foreground = 'p:yellow'
-  #   background = 'transparent'
-  #   type = 'python'
-
-  #   [blocks.segments.properties]
-  #     display_mode = 'files'
-  #     fetch_version = false
-  #     fetch_virtual_env = false
