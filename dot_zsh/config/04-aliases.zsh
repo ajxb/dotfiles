@@ -24,3 +24,5 @@ command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 command -v lsd > /dev/null && alias tree='lsd --tree'
 command -v bat > /dev/null && alias cat='bat --pager=never'
 command -v bat > /dev/null && alias less='bat'
+
+alias purge="sudo bash -c 'sync && echo 1 > /proc/sys/vm/drop_caches'"
