@@ -48,6 +48,7 @@
   </Menu>
   <Separator weakSeparator="1"/>
   <Separator weakSeparator="1"/>
+  <Separator weakSeparator="1"/>
   <Menu alreadyVisited="1" name="settings" noMerge="1">
    <text translationDomain="kxmlgui6">&amp;Settings</text>
    <DefineGroup name="session-settings"/>
@@ -95,6 +96,9 @@
   <Separator name="separator_0"/>
   <Action name="split-view-left-right"/>
   <Action name="split-view-top-bottom"/>
+  <Spacer name="spacer_0"/>
+  <Action name="options_show_menubar"/>
+  <Action name="toggle-maximize-current-view"/>
  </ToolBar>
  <ActionProperties scheme="Default">
   <Action name="split-view" priority="128"/>
