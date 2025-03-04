@@ -19,6 +19,18 @@ zstyle ':completion::complete:*' cache-path ~/.zcompcache
 zstyle ':completion:*' group-name ''
 
 # Path completion for specific commands
+{{- if eq .chezmoi.os "darwin" }}
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin \
+                                          /usr/local/bin  \
+                                          /usr/bin        \
+                                          /usr/sbin       \
+                                          /bin            \
+                                          /sbin           \
+                                          /opt/homebrew/bin
+
+# Brew completion configuration
+zstyle ':completion:*:brew:*' menu select
+{{- else if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "fedora") }}
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin \
                                           /usr/local/bin  \
                                           /usr/sbin       \
@@ -28,9 +40,11 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin \
                                           /usr/X11R6/bin  \
                                           /var/lib/snapd/snap/bin \
                                           /usr/lib/flatpak/bin
-
 # DNF completion configuration
 zstyle ':completion:*:dnf:*' menu select
+{{- end }}
+
+# Format descriptions
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 
 # Initialize completion system

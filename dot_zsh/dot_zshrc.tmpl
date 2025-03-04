@@ -20,7 +20,11 @@ antidote load
 # Oh My Posh
 ###############################################################################
 if ! command -v oh-my-posh &> /dev/null; then
+  {{- if eq .chezmoi.os "darwin" }}
+  brew install jandedobbeleer/oh-my-posh/oh-my-posh
+  {{- else }}
   curl -s https://ohmyposh.dev/install.sh | bash -s
+  {{- end }}
   oh-my-posh font install JetBrainsMono
 fi
 

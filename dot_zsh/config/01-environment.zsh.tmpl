@@ -1,8 +1,14 @@
 # Basic environment settings
+{{- if eq .chezmoi.os "darwin" }}
 READNULLCMD=${PAGER:-/usr/bin/pager}
+{{- else }}
+READNULLCMD=${PAGER:-/usr/bin/less}
+{{- end }}
 
-# Array to note missing features
+{{- if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "fedora") }}
+# Array to note missing features (Fedora specific)
 typeset -ga fedora_missing_features
+{{- end }}
 
 # Less configuration
 export LESS_TERMCAP_mb=$'\e[1;32m'
