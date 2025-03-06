@@ -2,7 +2,14 @@
 .zsh/.zcompdump
 .zsh/.zsh_plugins.zsh
 
-{{ if eq .chezmoi.os "darwin" }}
+{{ if ne .chezmoi.os "darwin" }}
+# Darwin Specific Files
+Library
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+# Linux Specific Files
+.config/bcompare5
 .local/share/konsole
 .local/share/kxmlgui5
 {{ end }}

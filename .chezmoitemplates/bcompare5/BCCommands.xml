@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Produced by Beyond Compare 5 from Scooter Software -->
+<BCCommands Version="2" MinVersion="2">
+	<TTextCompareCommands>
+		<Items>
+			<DisplayFontDecreaseAction Value="Shift+Ctrl+K95;;True"/>
+			<DisplayFontIncreaseAction Value="Shift+Ctrl+Num +;;True"/>
+		</Items>
+	</TTextCompareCommands>
+</BCCommands>

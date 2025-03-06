@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Produced by Beyond Compare 5 from Scooter Software -->
+<BCPreferences Version="2" MinVersion="2">
+	<TBcPrefs>
+		<NextDiffAfterCopy Value="True"/>
+		<NextDiffLoadFirst Value="True"/>
+		<NextDiffWrap Value="True"/>
+		<OpConfirmCopy Value="False"/>
+	</TBcPrefs>
+</BCPreferences>

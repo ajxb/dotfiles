@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Produced by Beyond Compare 5 from Scooter Software -->
+<BCSessions Version="2" MinVersion="2">
+	<TSessionFolder>
+		<Items>
+			<TDirCompareSession>
+				<Filters>
+					<NameFilter Value="-.git/"/>
+				</Filters>
+				<Rules>
+					<FollowSymLinks Value="True"/>
+					<UseContentComparison Value="True"/>
+					<UseTimestampComparison Value="False"/>
+				</Rules>
+				<State>
+					<DisplayFilter Value="[showLeftAdded, showRightAdded, showLeftChanged, showRightChanged, showConflict]"/>
+				</State>
+			</TDirCompareSession>
+		</Items>
+	</TSessionFolder>
+</BCSessions>
